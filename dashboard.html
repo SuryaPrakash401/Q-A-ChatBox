@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='dash.css'> -->
+    <!-- <script src='main.js'></script> -->
+    <style>
+	#container{
+            height: 619px;
+            width: 70%;
+            margin-top: 5%;
+            margin-left: 20%;
+            margin-right: 20%;
+            border: 2px solid black;
+        }
+    header {
+        width: 100%;
+        height: 120px;
+        color: white;
+        background-color:rgb(42, 8, 75);
+    }
+#logo {
+    float:left;
+    margin-left:25%;
+    padding-top:35px;
+    font-size: 50px;
+    }
+    #image {
+    float: left;
+    margin-top:10px;
+    margin-left: 15px;
+}
+#logout {
+    float: right;
+    color: white;
+    margin-right: 14px;
+    font-size: 30px;
+    padding-top:40px;
+    text-decoration: none;
+}
+#users {
+    float: right;
+    width: 30%;
+    text-align: center;
+    height: 495px;
+    background-color: rgb(227, 189, 177);
+    color: brown;
+    font-size: 30px;
+}
+#chat-box {
+    float:left;
+    width: 70%;
+    height:400px;
+    background-color: rgb(236, 227, 214);
+}
+#chat-box1 {
+    float:right;
+    margin-top: 270px;
+    margin-right: 10px; 
+    font-size: 20px;
+    border: none;
+    padding-top: 10px;
+    width: 70%;
+    background-color: rgb(196, 189, 188);
+}
+
+#message-box {
+    float: left;
+    padding-top: 25px;
+    width: 70%;
+    height: 70px;
+    background-color: rgb(189, 153, 151);
+}
+#send {
+    float: right;
+    width: 7em;
+    height: 3em;
+    border: blue;
+    color: white;
+    background-color:rgb(123, 196, 196);
+    margin-right:5px;
+}
+#message {
+    overflow: scroll;
+    margin-left: 25px;
+    width:80%;
+    font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <script>
+        function text() {
+
+            
+
+            // var para = document.createElement("P");
+            // para.innerHTML =document.getElementById("message").value;
+            // document.getElementById("chat-box1").appendChild(para);
+            // // var node = document.getElementById("message").value;
+
+             document.getElementById("chat-box1").value += document.getElementById("message").value;
+            var str = "\n";
+            document.getElementById("chat-box1").value += str;
+             document.getElementById("chat-box1").style.color="black";
+            document.getElementById("message").value = "";
+            // document.getElementById("message").style.visibility="hidden";
+           
+
+        }
+    </script>
+	<div id="container">
+    <header>   
+        <img src="chatbox.png" id="image" width="100" height="100"/>
+        <label id="logo">Chat Box</label>
+        <a href="login.html" id="logout">Log Out</a>
+    </header>
+    <section>
+            <aside id = "users">Logged in Users</aside>
+            <article id = "text-session">
+                <div id = "chat-box" >
+                   <textarea readonly cols="3" rows="4" value=" " id = "chat-box1"></textarea> 
+                </div>
+                <div id = "message-box"> 
+                    <input type = "text" id = "message" placeholder ="Type your message here..." value=""/>
+                    <button onclick= "text()" id  = "send">Send</button>
+                </div>           
+             </article>
+    </section>
+</div>
+</body>
+</html>
