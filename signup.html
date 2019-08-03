@@ -1,126 +1,154 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Application</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <style>
-        #container{
-            height: 400px;
-            width: 60%;
-            margin-top: 5%;
-            margin-left: 20%;
-            margin-right: 20%;
-            background-color: rgb(236, 227, 214);
-            border: 2px solid black;
-        }
-        #header{
-            width: 96.4%;
-            height: 80px;
-            background-color: rgb(42, 8, 75);
-            color: aliceblue;
-            font-size: 24px;
-            text-align: center;
-            padding: 10px 10px 10px 20px;
-        }
-        #title
-        {
-            font-size: 24px;
-            padding-left: 200px;
-            padding-top: 10px;
-        } 
-        #main-table {
-            padding-bottom: 50px;
-        }
-        #signup{
-            height: 45px;
-            width: 100px;
-            border: none;
-            background-color: rgb(123, 196, 196);
-            color:blanchedalmond;
-            text-align: center;
-            margin-top: 30px; 
-            padding-bottom: 5px;          
-        }
-        #login{
-            height: 30px;
-            width: 100px;
-            border: none;
-            background-color: rgb(123, 196, 196);
-            color: blanchedalmond;
-            text-align: center;
-            float: right;
-            margin-left: 100px; 
-        }
-        .cancelbtn {
-            width: auto;
-            padding: 10px 18px;
-            background-color: #f44336;
-            color: blanchedalmond;
-            font-size: 20px;
-        }
-    </style>
-    <script>
-        function myFunction() {
-            var name = document.forms["myForm"].employeeName.value;
-            if (name == "") {
-                alert("EmployeeName must be filled out");
-                return false;
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Application</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <style>
+            #container{
+                height: 400px;
+                width: 60%;
+                margin-top: 5%;
+                margin-left: 20%;
+                margin-right: 20%;
+                background-color: rgb(236, 227, 214);
+                border: 2px solid black;
             }
-            var id = document.forms["myForm"].employeeid.value;
-            if (id == "") {
-                alert("Employeeid must be filled out");
-                return false;
+            #header{
+                width: 96.4%;
+                height: 80px;
+                background-color: rgb(42, 8, 75);
+                color: aliceblue;
+                font-size: 24px;
+                text-align: center;
+                padding: 10px 10px 10px 20px;
             }
-            if(id.length != 6){
-                alert("Employeeid should contain 6 digits");
-                return false;
+            #title
+            {
+                font-size: 24px;
+                padding-left: 200px;
+                padding-top: 10px;
+            } 
+            #main-table {
+                padding-bottom: 50px;
             }
-            var username =  document.forms["myForm"].username.value;
-            if (username == "") {
-                alert("username must be filled out");
-                return false;
+            #signup{
+                height: 45px;
+                width: 100px;
+                border: none;
+                background-color: rgb(123, 196, 196);
+                color:blanchedalmond;
+                text-align: center;
+                margin-top: 30px; 
+                padding-bottom: 5px;          
             }
-            var password = document.forms["myForm"].password.value;
-            if (password == "") {
-                alert("password must be filled out");
-                return false;
+            #login{
+                height: 30px;
+                width: 100px;
+                border: none;
+                background-color: rgb(123, 196, 196);
+                color: blanchedalmond;
+                text-align: center;
+                float: right;
+                margin-left: 100px; 
             }
+            .cancelbtn {
+                width: auto;
+                padding: 10px 18px;
+                background-color: #f44336;
+                color: blanchedalmond;
+                font-size: 20px;
+            }
+        </style>
+        <script>
+            function myFunction(form) {
+                var mail = document.forms["myForm"].mailid.value;
+                if (mail == "") {
+                    alert("mailid must be filled out");
+                    return false;
+                }
+                var id = document.forms["myForm"].employeeid.value;
+                if (id == "") {
+                    alert("Employeeid must be filled out");
+                    return false;
+                }            
+                if(id.length != 6){
+                    alert("Employeeid should contain 6 digits");
+                    return false;
+                }
+                var username =  document.forms["myForm"].username.value;
+                if (username == "") {
+                    alert("username must be filled out");
+                    return false;
+                }
+                var password = document.forms["myForm"].password.value;
+                if (password == "") {
+                    alert("password must be filled out");
+                    return false;
             
-        }
-    </script>
-</head>
-<body>
-    <div id="container">
-    <header id = header>
-        <img src="chatbox.png" alt="chatbox" style="width: 50px; height: 50px;">
-        <span><label id="title">CHAT BOX</label></span>
-        <span><label style="float: right; padding-right: 4px;">already have an account?</label>
-        <a href="login.html"><input type="submit" value="Login" name="signup" id="login"></a></span>
-    </header>
-    <form name="myForm"  onsubmit="return myFunction()" action="login.html" style="margin-left: 35%; margin-top: 40px;">
-        <div>
-            <label style="font-size: 20px">EmployeeName</label>
-            <input type = "text" name="employeeName" value="" id="employeeName" style="margin-bottom: 20px; margin-left:20px;">
-        </div>
-        <div>
-            <label style="font-size: 20px">Employee_Id</label>
-            <input type = "number" name="employeeid" value="" id="employeeid" style="margin-bottom: 20px; margin-left:40px;">
-        </div>
-        <div>
-            <label style="font-size: 20px">User_Name</label>
-            <input type = "text" name="username" value="" id="username" style="margin-bottom: 20px; margin-left:52px;">
-        </div>
-        <div>
-            <label style="font-size: 20px">Password</label>
-            <input type="password" name="password" value="" id="password" style="margin-bottom: 10px; margin-left:69px;">
-         </div>
-         <div>
-            <input type="submit" value="Sign Up" name="signup" id="signup" style="font-size: 20px; margin-right: 22%">
-            <span><button type="button" class="cancelbtn"><a href="signup.html" style="text-decoration: none">Cancel</a></button></span>
-         </div>     
-    </form> 
-</div>
-</body>
-</html>
+                }
+                if(form.password.value.length < 6) {
+                    alert("Error: Password must contain at least six characters!");
+                    form.password.focus();
+                    return false;
+                }
+                if(form.password.value == form.username.value) {
+                    alert("Error: Password must be different from Username!");
+                    form.password.focus();
+                    return false;
+                }
+                re = /[0-9]/;
+                if(!re.test(form.password.value)) {
+                    alert("Error: password must contain at least one number (0-9)!");
+                    form.password.focus();
+                    return false;
+                }
+                re = /[a-z]/;
+                if(!re.test(form.password.value)) {
+                    alert("Error: password must contain at least one lowercase letter (a-z)!");
+                    form.password.focus();
+                    return false;
+                }
+                re = /[A-Z]/;
+                if(!re.test(form.password.value)) {
+                    alert("Error: password must contain at least one uppercase letter (A-Z)!");
+                    form.password.focus();
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+        <header id = header>
+            <img src="chatbox.png" alt="chatbox" style="width: 50px; height: 50px;">
+            <span><label id="title">CHAT BOX</label></span>
+            <span><label style="float: right; padding-right: 4px;">already have an account?</label>
+            <a href="login.html"><input type="submit" value="Login" name="signup" id="login"></a></span>
+        </header>
+        <form name="myForm"  onsubmit="return myFunction(this)" action="login.html" style="margin-left: 35%; margin-top: 40px;">
+            <div>
+                <label style="font-size: 20px">MailId</label>
+                <input type = "email" name="mailid" value="" id="mailid" style="margin-bottom: 20px; margin-left:93px;">
+            </div>
+            <div>
+                <label style="font-size: 20px">Employee_Id</label>
+                <input type = "number" name="employeeid" value="" id="employeeid" style="margin-bottom: 20px; margin-left:40px;">
+            </div>
+            <div>
+                <label style="font-size: 20px">User_Name</label>
+                <input type = "text" name="username" value="" id="username" style="margin-bottom: 20px; margin-left:52px;">
+            </div>
+            <div>
+                <label style="font-size: 20px">Password</label>
+                <input type="password" name="password" value="" id="password" style="margin-bottom: 10px; margin-left:69px;">
+            </div>
+            <div>
+                <input type="submit" value="Sign Up" name="signup" id="signup" style="font-size: 20px; margin-right: 22%">
+                <span><button type="button" class="cancelbtn"><a href="signup.html" style="text-decoration: none">Cancel</a></button></span>
+            </div>     
+        </form> 
+    </div>
+    </body>
+    </html>
