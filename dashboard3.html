@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+    header {
+        width: 100%;
+        height: 120px;
+        color: white;
+        background-color:rgb(42,8,75);
+    }
+#logo {
+        float:left;
+        margin-left:30%;
+        padding-top:35px;
+        font-size: 50px;
+    }
+    #image {
+        float: left;
+        margin-top:10px;
+        margin-left: 15px;
+}
+#logout {
+    float: right;
+    color: white;
+    margin-right: 140px;
+    font-size: 30px;
+    padding-top:40px;
+    text-decoration: none;
+}
+#users {
+    float: right;
+    width: 30%;
+    text-align: center;
+    height: 625px;
+    background-color: palegreen;
+    color: brown;
+    font-size: 30px;
+    overflow: auto;
+}
+#chat-box {
+    float:left;
+    width: 70%;
+    height:500px;
+    background-color: lightcyan;
+    overflow: auto;
+}
+textarea{
+  border: 5px solid black;
+  color:tomato;
+  font-weight:bold;
+  width:60%;
+  font-size:20px;
+  text-align:center;
+  padding:10px;
+  margin-right: 20px; 
+  border-radius:60px;
+  margin-top:15px;
+  margin-bottom:20px;
+  float:right;
+}
+#message-box {
+    float: left;
+    padding-top: 25px;
+    width: 70%;
+    height: 100px;
+    background-color: gainsboro;
+}
+#send {
+    float: right;
+    width: 7em;
+    height: 3em;
+    border: blue;
+    color: white;
+    background-color: blue;
+    margin-right:25px;
+
+}
+#message {
+    overflow: auto;
+    margin-left: 25px;
+    width:80%;
+    border-radius: 15px;
+    font-size: 20px;
+}
+    </style>
+    <script>
+        function myFunction() {
+        if(document.getElementById("message").value != ""){
+            var x = document.createElement("TEXTAREA");
+            var s= document.getElementById("message").value;
+            document.getElementById("message").value="";
+            x.innerHTML = s;
+            document.getElementById("chat-box1").appendChild(x);
+            var att = document.createAttribute("readonly");
+            var att1 = document.createAttribute("rows");
+            var att2 = document.createAttribute("cols");
+            att.value = "readonly";
+            att1.value = "3";
+            att2.value = "5";
+            x.setAttributeNode(att);
+            x.setAttributeNode(att1);
+            x.setAttributeNode(att2);
+        }
+        }
+        </script>
+</head>
+<body>
+   
+    <header>   
+        <img src="chatbox.png" id="image" width="100" height="100"/>
+        <label id="logo">Chat Box</label>
+        <a href="login.html" id="logout">Log Out</a>
+    </header>
+    <section>
+            <aside id = "users">Logged in Users</aside>
+            <article id = "text-session">
+              <div id = "chat-box" >
+                   <div id = "chat-box1"></div>
+                </div>
+                <div id = "message-box"> 
+                    <input type = "text" id = "message" placeholder ="Type your message here..." value=""/>
+                    <button onclick= "myFunction()" id= "send">Send</button>
+                </div>           
+             </article>
+    </section>
+    
+</body>
+</html>
